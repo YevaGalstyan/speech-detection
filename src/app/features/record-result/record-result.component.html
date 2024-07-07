@@ -1,0 +1,11 @@
+<div class="record_results">
+    <p nz-typography
+       [nzCopyable]="!helperService.recognizing"
+       [nzCopyText]="(helperService.recordResult | async)!">
+        Record results
+    </p>
+
+    <span nz-typography>
+        {{helperService.recordResult | async}}
+    </span>
+</div>

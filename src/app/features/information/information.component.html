@@ -1,0 +1,30 @@
+<div class="tab_layout">
+    <nz-tabset style="width: 100%">
+        <nz-tab nzTitle="Tab 1">
+            <div class="data_layout">
+                <div class="form_layout">
+                    <div class="button_layout">
+                        <app-record></app-record>
+                    </div>
+                    <form nz-form [formGroup]="helperService.validateForm">
+                        <nz-form-item *ngFor="let input of inputFields">
+                            <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired [nzFor]="input.formControlName">{{ input.name }}</nz-form-label>
+                            <nz-form-control [nzSm]="14" [nzXs]="24">
+                                <div class="input_field">
+                                    <input nz-input [formControlName]="input.formControlName" [id]="input.formControlName"/>
+                                    <span nz-icon nzType="caret-right" nzTheme="outline"
+                                          *ngIf="speechService.currentRecord
+                                && speechService.currentRecord.name === input.name
+                                && speechService.currentRecord.prompt.state === PromptState.started"></span>
+                                </div>
+                            </nz-form-control>
+                        </nz-form-item>
+                    </form>
+                </div>
+                <app-record-result style="width: 30%"/>
+            </div>
+        </nz-tab>
+        <nz-tab nzTitle="Tab 2">Content of Tab Pane 2</nz-tab>
+        <nz-tab nzTitle="Tab 3">Content of Tab Pane 3</nz-tab>
+    </nz-tabset>
+</div>

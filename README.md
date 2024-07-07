@@ -1,27 +1,61 @@
-# SpeechDetection
+# Azure Speech Service Integration in Angular - Testing App
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.7.
+This repository contains a small Angular application that demonstrates the integration of Azure Cognitive Services for speech recognition and speech synthesis. The application uses Azure's voice detection AI to interact with users via text-to-speech and speech-to-text functionalities. This project is intended for testing and demonstration purposes.
 
-## Development server
+## Features
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- **Text-to-Speech**: Converts text prompts to speech using Azure's Speech Service and plays the audio output.
+- **Speech-to-Text**: Listens to the user's speech through the microphone and converts it to text, filling in the specified form fields.
+- **Form Autofill**: Automatically fills in form fields such as first name, last name, and age based on user speech input.
 
-## Code scaffolding
+## Getting Started
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### Prerequisites
 
-## Build
+- Node.js (version 12 or higher)
+- Angular CLI (version 12 or higher)
+- An Azure account with a Speech Service resource
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+### Installation
 
-## Running unit tests
+1. **Clone the repository**:
+    ```bash
+    git clone https://github.com/YevaGalstyan/speech-detection.git
+    cd speech-detection
+    ```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+2. **Install dependencies**:
+    ```bash
+    npm install
+    ```
 
-## Running end-to-end tests
+3. **Set up Azure Speech Service**:
+    - Sign in to the [Azure Portal](https://portal.azure.com/).
+    - Create a new Speech Service resource.
+    - Note down the subscription key and service region.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+4. **Configure the application**:
+    - Open `src/app/speech.service.ts`.
+    - Replace `"6d345534e918442f8dc7a8e1c0df8b53"` with your Azure Speech Service subscription key.
+    - Replace `"westeurope"` with your Azure service region.
 
-## Further help
+    ```typescript
+    const speechConfig = SpeechConfig.fromSubscription("your_subscription_key", "your_service_region");
+    ```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+5. **Run the application**:
+    ```bash
+    ng serve
+    ```
+    - Navigate to `http://localhost:4200/` in your web browser.
+
+### Usage
+
+1. Enter the form control names for first name, last name, and age.
+2. The application will use text-to-speech to prompt you to say the values for these fields.
+3. Speak the required information when prompted.
+4. The application will use speech-to-text to recognize your speech and fill in the form fields automatically.
+
+### License
+
+This project is licensed under the Apache License, Version 2.0. See the [LICENSE](LICENSE) file for more details.

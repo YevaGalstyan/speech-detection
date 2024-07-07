@@ -1,0 +1,3 @@
+<button [disabled]="isRecording"
+        *ngIf="!helperService.recognizing" (click)="startRecording()" nz-button nzType="default">Start recording</button>
+<button *ngIf="helperService.recognizing" (click)="speechService.stopRecording()" nz-button nzType="default">Stop recording</button>

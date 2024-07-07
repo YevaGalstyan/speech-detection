@@ -1,0 +1,27 @@
+.tab_layout {
+  width: calc(100vw - 193px);
+  padding: 20px;
+  display: flex;
+}
+
+.form_layout {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 80%;
+}
+
+.button_layout {
+  display: flex;
+  gap: 10px;
+}
+
+.data_layout {
+  display: flex;
+  gap: 20px;
+}
+
+.input_field {
+  display: flex;
+  gap: 5px;
+}
