@@ -2,6 +2,8 @@
 
 This repository contains a small Angular application that demonstrates the integration of Azure Cognitive Services for speech recognition and speech synthesis. The application uses Azure's voice detection AI to interact with users via text-to-speech and speech-to-text functionalities. This project is intended for testing and demonstration purposes.
 
+See post in [Porfolio](https://yeva-galstyan.vercel.app/work/1)
+
 ## Features
 
 - **Text-to-Speech**: Converts text prompts to speech using Azure's Speech Service and plays the audio output.
